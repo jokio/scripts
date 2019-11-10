@@ -34,6 +34,10 @@ fi
 cd /tmp
 rm -fr $rootFolderName
 
+echo "+++++++++++++++++++++++++++++++++++++"
+echo "Entered tmp directory and start clonning..."
+echo "+++++++++++++++++++++++++++++++++++++"
+
 # Clone repository
 git clone git@github.com:playerx/jok-docker.git $rootFolderName
 
