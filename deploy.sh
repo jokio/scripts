@@ -37,7 +37,15 @@ rm -fr $rootFolderName
 # Clone repository
 git clone git@github.com:playerx/jok-docker.git $rootFolderName
 
+echo "+++++++++++++++++++++++++++++++++++++"
+echo "Git clone finished"
+echo "+++++++++++++++++++++++++++++++++++++"
+
 cd $rootFolderName
+
+echo "+++++++++++++++++++++++++++++++++++++"
+echo "Entered folder: $rootFolderName"
+echo "+++++++++++++++++++++++++++++++++++++"
 
 # Copy files
 if [ -e /cluster/traefik.toml ]; then
@@ -45,10 +53,20 @@ if [ -e /cluster/traefik.toml ]; then
 fi
 
 cp ./traefik.toml /cluster/
+echo "+++++++++++++++++++++++++++++++++++++"
+echo "Traefik configuration is ready"
+echo "+++++++++++++++++++++++++++++++++++++"
 
 
 echo "REGION=$REGION" >> ./.env
+echo "+++++++++++++++++++++++++++++++++++++"
+echo "REGION env variable is set"
+echo "+++++++++++++++++++++++++++++++++++++"
 
+
+echo "+++++++++++++++++++++++++++++++++++++"
+echo "Starting docker compose with container: $CONTAINER"
+echo "+++++++++++++++++++++++++++++++++++++"
 # Pull Images & Up them all
 docker-compose pull $CONTAINER
 docker-compose up -d $CONTAINER
