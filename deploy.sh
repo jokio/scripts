@@ -7,14 +7,14 @@ echo "CONTAINER=$CONTAINER"
 
 rootFolderName=jokio-docker
 
-if [ -z "$CONTAINER" ]
-then
-# Pre-requirement: check and install pip & docker-compose
-echo "Prerequirement dependency install..."
-echo "+++++++++++++++++++++++++++++++++++++"
-apt install -y python-pip && pip install docker-compose
-echo "+++++++++++++++++++++++++++++++++++++"
-fi
+# if [ -z "$CONTAINER" ]
+# then
+# # Pre-requirement: check and install pip & docker-compose
+# echo "Prerequirement dependency install..."
+# echo "+++++++++++++++++++++++++++++++++++++"
+# apt install -y python-pip && pip install docker-compose
+# echo "+++++++++++++++++++++++++++++++++++++"
+# fi
 
 # Create neessary folders
 if [ -e /cluster ]; then
